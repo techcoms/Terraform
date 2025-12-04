@@ -141,7 +141,7 @@ pipeline {
       steps {
         sh '''
           set -euo pipefail
-          kubectl apply -f deploymrnt-ngnix.yaml
+          kubectl apply -f deployment-ngnix.yaml
           kubectl rollout status deployment/nginx --timeout=120s || true
           kubectl get pods -l app=nginx -o wide
         '''
